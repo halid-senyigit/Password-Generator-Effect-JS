@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- you wont need these styles -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="test.css">
+
+    <title>Password-Generator</title>
+</head>
+<body>
+    <!-- default password generator effect -->
+    <div class="password-generator-effect">Password Generator Example</div>
+    <div class="password-generator-effect">P@ssW0rd! ...</div>
+    <div class="password-generator-effect">Password Generator Effect with JS...</div>
+
+    <!-- custom element array -->
+    <div class="custom-class">Custom element effect 1...</div>
+    <div class="custom-class">Custom element effect list 2...</div>
+
+    <!-- custom single element -->
+    <div id="custom-one-element">Custom single element effect...</div>
+    
+
+    <script src="password-effect.js"></script>
+        
+    <script type="text/javascript">
+        // using with element array
+        let elements = Array.from(document.querySelectorAll(".custom-class"));
+        elements.passwordGeneratorEffect({
+            randomiseSpeed: 300, // is a randomization multiplier of each character in ms
+            clearSpeed: 500 // effect animation time in ms
+        });
+
+        // using with one element
+        let element = document.querySelector("#custom-one-element");
+        element.passwordGeneratorEffect({
+            randomiseSpeed: 100,
+            clearSpeed: 5000
+        });
+
+        // or you can use with default values
+        //elements.passwordGeneratorEffect();
+        // element.passwordGeneratorEffect();
+    </script>
+</body>
+</html>
